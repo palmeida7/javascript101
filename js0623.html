@@ -1,0 +1,238 @@
+<html>
+    <script>
+let anikanString = "Hello, I am Bob!";
+vaderString = anikanString.replace("Bob", "Peter")
+console.log(vaderString);
+console.log(anikanString.toLowerCase())
+console.log(vaderString.slice(7))
+
+const name = ['Bob', 'Jim', 'Pete', 'Lin', 'May']
+console.log(name.reverse())
+
+//Write a function 3x that has two parameters and those parameters are used in a sentence that says "hello my name is NAME I am AGE years old", 
+//except NAME and AGE would be the parameters given.
+//Use the 3 ways of declaring a function to make each function different but the results to console the same.
+//For each function use a different way of creating the output sentence. For example only one can use concatanation.
+
+function greetHello(name, age){
+    console.log("Hello my name is " + name + " and I am " + age + ".")
+}
+greetHello("Peter", 35)
+
+function faveSubject(name, subject){
+    return `${name}'s favorite subject in school is ${subject}`;
+}
+faveSubject("Peter", "History")
+
+
+
+function tipAmount(bill, service) {
+    if (service == "good") {
+        return .20 * bill
+    }
+    else if (service == "fair") {
+        return .15 * bill
+    }
+    else if (service == "bad") {
+        return .10 * bill
+    }
+}
+tipAmount(100, "good")
+
+
+function totalAmount(bill, service) {
+    if (service == "good") {
+        return (.20 * bill) + bill
+    }
+    else if (service == "fair") {
+        return (.15 * bill) + bill
+    }
+    else if (service == "bad") {
+        return (.10 * bill) + bill
+    }
+}
+totalAmount(100, "good")
+
+//For Loop
+function rangeOfSet(i,j) {
+    let x;
+    for (x=i; x < j; x++){
+        console.log(x)
+    }
+}
+rangeOfSet(0,20)
+
+//While Loop
+function rangeOfSet(y) {
+    let x = 0;
+    while (x < y) {
+        console.log(x);
+        x++;
+    }
+}
+rangeOfSet(20)
+
+
+
+function printSquare(y) {
+    let x;
+    for (x=0; x < y; x++) {
+        console.log("---")
+    }
+}
+printSquare(5)
+    
+
+
+function printBox{
+
+}
+
+function printBanner {
+
+}
+
+let classNames = ["Pete", "Jim", "John", "Paul", "Sara"]
+classNames.forEach(function(name) {
+    console.log(name)
+})
+
+const callback = (item, index) =>{
+    console.log(`${index}. ${item}`)
+}
+["Pete", "Jim", "John", "Paul", "Sara"].forEach(callback)
+
+let classNames = ["Pete", "Jim", "John", "Paul", "Sara"]
+classNames.forEach(callback)
+
+const seating = (item, index) =>{
+    console.log(`${index} = ${item}`)
+}
+["Pete", "Jim", "John", "Paul", "Sara"].forEach(seating)
+
+
+//rework this one
+let classNames = ["Pete", "Jim", "John", "Paul", "Sara"]
+
+let template = {
+    name: null,
+    side:"light",
+    height:"normal"
+}
+
+classNames.forEach((name, idx) =>{
+    res=Object.assign({}, template);
+    res.name = name;
+
+    if(name == "John" || name == "Paul") {
+        res.height = "tall"
+    } else if(name == "Pete" || name == "Sara") {
+        res.height = "short" 
+    }
+    name=="Jim" ? res.side = "Dark" : null
+    classNames[idx] = res
+})
+
+
+
+//Write a function that will recieve a sentance as a string and return another 
+//string of only the letters that MATCH the requirement of being upper case JOINed together.
+//Hint you will be using a string method and an array method.
+let originalString = "Hello, I am Bob!";
+newString = originalString.replace("Bob", "Peter")
+console.log(originalString.toUpperCase())
+///////
+
+//Write a function that will return the KEYS of an object as an array and have the array SORTed in alphebetical order.
+let anakin = {
+    name: "Anakin",
+    lightsaber: "red",
+    title: "jedi",
+    padawan: "Asoka"
+}
+let keys = Object.keys(anakin)
+console.log(keys.sort())
+
+
+//Write a function that will accept an Array of numbers as a parameter and return the first number that it FINDs that is greater than a second parameter.
+//Hint I told you that you would see this on MDN.
+const numbers = [1,2,3,4,5]
+const findFunc = (ar,compare)=>ar.find(e=>e>compare)
+findFunc(numbers, 3)
+
+
+//Write a function that accepts 2 objects and returns a new object that is made up of the two objects.
+//The resulting object must not modify either of the two objects in the parameters.
+//object assign
+
+//#1
+`Create a function that accepts an array as an argument and for every item in the array return a new array of objects where each object has two keys. 
+Item and index. The value should be the element from the array and the index respectivly.` 
+const objList = testArr =>{
+    return testArr.map((name, index)=> ({name:name, index:index}))
+}
+console.log(objList(['red','blue','green','orange']))
+
+
+//#2
+`Use the array of object provided in the file "swapi.js" for the next several items.
+Create an array of only the names.`
+const starNames = characters.map(function(char) {
+    return char.name;
+});
+console.log(starNames)
+
+
+
+`Create an array that includes the name and mass of all charectors who mass is greater than 50.
+Make sure you check the type of the mass.`
+const starNames = characters.map(function(char) {
+    return `${char.name} ${char.mass}`;
+});
+console.log(starNames)
+
+const starNames = characters.map(function(char) {
+    if (`${char.mass}` > 50){
+        return `${char.name} ${char.mass}`;
+    } 
+});
+console.log(starNames)
+
+
+
+
+`Create an array of objects of only the characters that have at  least one starship. The objects only need 'name' and 'hasStarship' as its keys.`
+const starNames = characters.map(function(char) {
+    return char.starships;
+});
+console.log(starNames)
+
+const starNames = characters.map(function(char) {
+    if (`${char.starships}` != []) {
+        return `${char.name} : hasStarShips`;
+    }
+});
+console.log(starNames)
+
+`create an array of names of only the charecters who have both a starship and a vehicle.`
+const starNames = characters.map.(function(char)).filter(function(char){
+    if (`${char.starships}` != []) {
+        if (`${char.vehicles}` != []) {
+        return `${char.name}`
+        }    
+    }
+
+});
+console.log(starNames)
+
+const starNames = characters.map.(function(char) {
+    if (`${char.starships}` != []) {
+        if (`${char.vehicles}` != []) {
+        return `${char.name}`
+        }    
+    }
+
+});
+console.log(starNames)
+
+</html>

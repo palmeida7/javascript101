@@ -1,0 +1,153 @@
+<html>
+    <script>
+        //write JS here
+        function greeting(name, age){
+            console.log("Hi my name is " + name + " and my age is " + age)
+}
+        greeting("Peter", 35)
+
+        let name = "Peter"
+        let age = 35
+        function hello(name,age){
+            console.log("Hello " + name +  "." + "You are " + age)
+        }
+        hello(name, age)
+
+        let salutation = (name, age) => "Hello " + name + ", you are " + age;
+        name="Peter"
+        age=35
+        salutation(name, age)
+        
+        function second(name, age){
+            return `Hello my name is ${name} I am ${age}`
+        }
+        second("Peter", 35)
+
+        let third = function(name,age){
+            console.log("Hello my name is", name, "and I am", age)
+        }
+        third("Peter", 35)
+
+        let doAfter = (param1) => {
+            console.log("Look I was Called")
+        }
+        function mainFunction(callback){
+            console.log("Main Function Executing")
+            callback()
+        }
+        mainFunction(doAfter)
+        mainFunction(()=>console.log('I am here'))
+
+
+        function mainFunction(callback, secondParam){
+            console.log("Main Function Executing")
+            callback(secondParam)
+        }
+        mainFunction(myParam => console.log("My Parent gave me"+myParam), "Something Bad")
+    
+        let aFunc = function(){
+            console.log("Parent Function Called")
+            return ()=>console.log("Child Function Called")
+        }
+        aFunc()
+        let aFunCalled = aFunc()
+        aFunCalled()
+
+        let name = "Yoda"
+        if (name == "Yoda"){
+            console.log("Take him to you I will")
+        }
+
+        let name = "Gladiator"
+        if (name=="Gladiator"){
+            console.log("Are you not entertained?!")
+        }
+
+        //let result = name//
+
+        const phrase = "Hello World"
+        if ((phrase.length) > 4) {
+            console.log("Its a big world")
+        } else {
+            console.log("This town is too small")
+        }
+
+        let i = 0;
+        while(i<10){
+            if(!(i % 2)){
+                console.log("I am one with the force.")
+            } else {
+                console.log("The Force is with me.")
+            }
+            i++;
+        }
+
+       // Write a function that accepts string as an argument and if the string is less than 4 charecters return one message, 
+        //if it is greater than 12 return another message otherwise return a final message about being accepted.
+        
+        function stringCount(sentence){
+            if (sentence.length < 4) {
+                console.log("Short")
+                return stringCount
+        }   else if (sentence.length > 12) {
+                console.log("over")
+                return stringCount
+        }   else {
+                console.log("Accepted")
+                return stringCount
+        }
+        }
+        stringCount("hi")
+
+
+
+        const testFunc = myString => myString.length <4 ? "Too Short" : myString.length > 12 ? "Too Long" : "Just Right"
+        
+
+
+
+
+   
+
+        //Write a function that accepts an argument named tempature. 
+        //Have at least 6 ranges of tempature that represents a html valid color. 
+        //Return the color based on the argument supplied when calling the function.
+        //Use Switch. (hint do a google search for 'switch(true)' )
+        
+        let temperature = 90;
+            switch(temperature) {
+            case 1:
+            range(80,89) == red 
+            break;
+            case 2:
+            80 == redorange
+            break;
+            case 3:
+            70 == orange 
+            break;
+            case 4: 
+            60 == yelloworange
+            break;
+            case 5:
+            50 == yellow
+            break;
+            case 6:
+            40 == blue
+            break;
+            default:
+            console.log("Wrong Input")
+            break;
+}
+console.log(temperature(80))
+
+        //`Write a function that will return an array of arrays with 100 copies of each element in the array supplied in the as an argument of the function. 
+        //The array in the parameter needs to be strings and needs to have at least 5 elements.
+//(ridiculous unessery challenge..seriously dont try this unless you are just wanting a challange) 
+       // complete the above with the following requirements (it can be more than one function for this):
+       // Without mutating anything (strings, arrays etc). This means no variable can change and no array can be added to or removed from. (look up imutability)
+      //  Without Using any loops
+      //  Without using forEach, map, filter, or reduce.
+      //  (seriously please do not spend more than 30 minutes trying to do this)`
+
+    </script>
+</html>
